@@ -1,13 +1,14 @@
+'use strict';
+
 var assert = require('assert');
 var stub = require('../helpers/stub');
 var MockUI = require('../helpers/mock_ui');
 var Cli = require('../../lib/cli');
+var baseArgs = ['node', 'path/to/cli'];
 
 var ui;
 var commands;
 var argv;
-var baseArgs = ['node', 'path/to/cli'];
-
 // helper to similate running the CLI
 function ember(args) {
   var argv;
@@ -40,7 +41,7 @@ afterEach(function() {
   commands = argv = ui = undefined;
 });
 
-describe('CLI', function(){
+describe('Unit: CLI', function(){
   it('exists', function(){
     assert(Cli);
   });
